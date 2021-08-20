@@ -7,6 +7,7 @@ function load(){
    // 第一次调用该函数
   watchWindowSize();
   SelectedDefaultMenu();
+  mdSwitch();
 }
 
  function SelectedDefaultMenu () {

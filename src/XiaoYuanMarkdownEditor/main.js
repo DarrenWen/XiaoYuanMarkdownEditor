@@ -197,6 +197,12 @@ ipcMain.on('filecontrol',(event,args)=>{
       case 'tool':
         mainWindow.webContents.openDevTools();
         break;
+        case 'help':
+          var fpath = path.join(__dirname,"readme.md");
+          var data = file.openFile(fpath);
+        mainWindow.webContents.send('readFile',{title:fpath,content:data});
+        
+        break;
   }
 });
 
