@@ -68,9 +68,9 @@ function watchWindowSize() {
     // 打印结果
     console.log( "宽: " + w + ", " + "高: " + h);
     var tbArea =  document.getElementById("tbArea");
-    tbArea.style.height = (h-48)+"px";
+    tbArea.style.height = (h-65)+"px";
     var showarea = document.getElementById("show-area");
-    showarea.style.height = (h-48)+"px";
+    showarea.style.height = (h-65)+"px";
     document.getElementById("md-area").focus();
   }
   // 将事件侦听器函数附加到窗口的resize事件
