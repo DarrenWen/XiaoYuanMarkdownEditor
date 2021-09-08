@@ -1,127 +1,141 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>新建文件</title>
-        <script src="./js/index.js"></script>
-        <link rel="stylesheet" type="text/css" href="./css/default.css">
-        <link rel="stylesheet" type="text/css" href="./static/font-awesome-4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="./static/leftmenu/css/style.css">
-        
-        <style>
-            body{
-                background-color: #222E3C;
-            }
-    .hLeft{
-        position: absolute;
-        left:0;
-        top:0;
-        width:300px;
-        bottom: 0px;
-        border:0px solid #999;
+
+<head>
+  <title>新建文件</title>
+  <script src="./js/index.js"></script>
+  <link rel="stylesheet" type="text/css" href="./css/default.css">
+  <link rel="stylesheet" type="text/css" href="./static/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="./static/leftmenu/css/style.css">
+
+  <style>
+    body {
+      background-color: #222E3C;
     }
-    .hRight{
-        position: absolute;
-        right:0;
-        top:0;
-        left:300px;
-        bottom: 0px;
-        border:0px solid #999;
+
+    .hLeft {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 300px;
+      bottom: 0px;
+      border: 0px solid #999;
     }
-    .hRight .titleLeft{
-        font-size: 20px;
-        font-weight: bold;
-        color: #009688;
-        height: 40px;
-        width: -webkit-calc(100% - 135px); ;
-        line-height: 40px;
-        vertical-align: middle;
-        -webkit-app-region: drag;
-        font-family:'微软雅黑';
+
+    .hRight {
+      position: absolute;
+      right: 0;
+      top: 0;
+      left: 300px;
+      bottom: 0px;
+      border: 0px solid #999;
     }
-    .hRight .titleRight{
-        position:absolute;
-        right: 0px;
-        top: 0px;
-        font-size: 20px;
-        font-weight: bold;
-        color: #4ab3f0;
-        height: 40px;
+
+    .hRight .titleLeft {
+      font-size: 20px;
+      font-weight: bold;
+      color: #009688;
+      height: 40px;
+      width: -webkit-calc(100% - 135px);
+      ;
+      line-height: 40px;
+      vertical-align: middle;
+      -webkit-app-region: drag;
+      font-family: '微软雅黑';
     }
-    .hRight .titleRight i{
-        color:#009688;
+
+    .hRight .titleRight {
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #4ab3f0;
+      height: 40px;
     }
-    .hRight .titleRight span{
-        cursor:pointer;
+
+    .hRight .titleRight i {
+      color: #009688;
     }
-    .hRight .titleRight span:hover{
-        background-color:#fff;
-        opacity: 0.8;
+
+    .hRight .titleRight span {
+      cursor: pointer;
     }
-    .sidebar__menu--item i{
-        color: #B0B0B2;
+
+    .hRight .titleRight span:hover {
+      background-color: #fff;
+      opacity: 0.8;
     }
-    textarea{  
-    border:0;  
-    background-color:transparent;  
-    /*scrollbar-arrow-color:yellow;  
+
+    .sidebar__menu--item i {
+      color: #B0B0B2;
+    }
+
+    textarea {
+      border: 0;
+      background-color: transparent;
+      /*scrollbar-arrow-color:yellow;  
     scrollbar-base-color:lightsalmon;  
-    overflow: hidden;*/  
-    color: #666464;  
-    height: auto;  
-}
-        </style>
-    </head>
-    <body onload="load()">
-        <div class="wrap">
-            <div class="hLeft">
-                <img src="./static/img/title.png" style="-webkit-app-region: drag;" />
-                <div class="sidebar">
-                    <!-- sidebartop -->
-                    <div class="sidebar__top">
-                      <div class="top">
-                        <h2>管理面板</h2>
-                        <div class="humburger">
-                          <span class="line"></span>
-                          <span class="line"></span>
-                          <span class="line"></span>
-                        </div>
-                      </div>
-                      <div class="search">
-                        <svg class="icon" height="512" viewBox="0 0 515.558 515.558" width="512" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M378.344 332.78c25.37-34.645 40.545-77.2 40.545-123.333C418.889 93.963 324.928.002 209.444.002S0 93.963 0 209.447s93.961 209.445 209.445 209.445c46.133 0 88.692-15.177 123.337-40.547l137.212 137.212 45.564-45.564L378.344 332.78zm-168.899 21.667c-79.958 0-145-65.042-145-145s65.042-145 145-145 145 65.042 145 145-65.043 145-145 145z" /></svg>
-                        <input type="text" name="seach" placeholder="输入关键词..." />
-                      </div>
-                    </div>
-                    <!--sidebar navigation -->
-                    <div class="sidebar__nav">
-                      <h5>导航菜单</h5>
-                      <ul class="sidebar__menu">
-                        <li class="sidebar__menu--item" data='create'>
-                          <i class="fa fa-file fa-lg" aria-hidden="true"></i>
-                          <span>新建文档</span>
-                        </li>
-                        <li class="sidebar__menu--item" data='open'>
-                            <i class="fa fa-folder-open-o fa-lg" aria-hidden="true"></i>
-                          <span>打开文档</span>
-                        </li>
-                        <li class="sidebar__menu--item" data='save'>
-                          <i class="fa fa-save fa-lg" aria-hidden="true"></i>
-                          <span>保存文档</span>
-                        </li>
-                        <li class="sidebar__menu--item" data='help'>
-                            <i class="fa fa-question-circle-o fa-lg" aria-hidden="true"></i>
-                          <span>帮助</span>
-                        </li>
-                        <li class="sidebar__menu--item" data='tool'>
-                            <i class="fa fa-gear fa-lg fa-spin" aria-hidden="true"></i>
-                          <span>
-                            设置
-                          </span>
-                        </li>
-                      </ul>
-                    </div>
-                    <!-- sidebar profile -->
-                    <!-- <div class="sidebar__profile">
+    overflow: hidden;*/
+      color: #666464;
+      height: auto;
+    }
+  </style>
+</head>
+
+<body onload="load()">
+  <div class="wrap">
+    <div class="hLeft">
+      <img src="./static/img/title.png" style="-webkit-app-region: drag;" />
+      <div class="sidebar">
+        <!-- sidebartop -->
+        <div class="sidebar__top">
+          <div class="top">
+            <h2>管理面板</h2>
+            <div class="humburger">
+              <span class="line"></span>
+              <span class="line"></span>
+              <span class="line"></span>
+            </div>
+          </div>
+          <div class="search">
+            <svg class="icon" height="512" viewBox="0 0 515.558 515.558" width="512" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M378.344 332.78c25.37-34.645 40.545-77.2 40.545-123.333C418.889 93.963 324.928.002 209.444.002S0 93.963 0 209.447s93.961 209.445 209.445 209.445c46.133 0 88.692-15.177 123.337-40.547l137.212 137.212 45.564-45.564L378.344 332.78zm-168.899 21.667c-79.958 0-145-65.042-145-145s65.042-145 145-145 145 65.042 145 145-65.043 145-145 145z" />
+            </svg>
+            <input type="text" name="seach" placeholder="输入关键词..." />
+          </div>
+        </div>
+        <!--sidebar navigation -->
+        <div class="sidebar__nav">
+          <h5>导航菜单</h5>
+          <ul class="sidebar__menu">
+            <li class="sidebar__menu--item" data='create'>
+              <i class="fa fa-file fa-lg" aria-hidden="true"></i>
+              <span>新建文档</span>
+            </li>
+            <li class="sidebar__menu--item" data='open'>
+              <i class="fa fa-folder-open-o fa-lg" aria-hidden="true"></i>
+              <span>打开文档</span>
+            </li>
+            <li class="sidebar__menu--item" data='save'>
+              <i class="fa fa-save fa-lg" aria-hidden="true"></i>
+              <span>保存文档</span>
+            </li>
+            <li class="sidebar__menu--item" data='help'>
+              <i class="fa fa-question-circle-o fa-lg" aria-hidden="true"></i>
+              <span>帮助</span>
+            </li>
+            <li class="sidebar__menu--item" data='tool'>
+              <i class="fa fa-gear fa-lg fa-spin" aria-hidden="true"></i>
+              <span>
+                设置
+              </span>
+            </li>
+          </ul>
+        </div>
+        <!-- sidebar profile -->
+        <!-- <div class="sidebar__profile">
                       <div class="avatar">
                         <img src="preview/1424582/2020-08-07/dh/img/1.jpg" alt="">
                       </div>
@@ -134,28 +148,28 @@
                           <path d="M382.678 226.804L163.73 7.86C158.666 2.792 151.906 0 144.698 0s-13.968 2.792-19.032 7.86l-16.124 16.12c-10.492 10.504-10.492 27.576 0 38.064L293.398 245.9l-184.06 184.06c-5.064 5.068-7.86 11.824-7.86 19.028 0 7.212 2.796 13.968 7.86 19.04l16.124 16.116c5.068 5.068 11.824 7.86 19.032 7.86s13.968-2.792 19.032-7.86L382.678 265c5.076-5.084 7.864-11.872 7.848-19.088.016-7.244-2.772-14.028-7.848-19.108z" /></svg>
                       </div>
                     </div> -->
-                  </div>
-            </div>
-            <div class="hRight">
-                <div class="titleLeft">&nbsp;&nbsp;小猿Markdown编辑器</div>
-                <div class="titleRight">
-                    <span class="fa-stack" onclick="winControl('minimize')">
-                        <i class="fa fa-square-o fa-stack-2x"></i>
-                        <i class="fa fa-window-minimize fa-stack-1x"></i>
-                      </span>
-                      <span class="fa-stack" onclick="winControl('maximize')">
-                        <i class="fa fa-square-o fa-stack-2x"></i>
-                        <i class="fa fa-window-maximize fa-stack-1x"></i>
-                      </span>
-                      <span class="fa-stack" onclick="winControl('close')">
-                        <i class="fa fa-square-o fa-stack-2x"></i>
-                        <i class="fa fa-window-close fa-stack-1x"></i>
-                      </span>
-                   </div>
-                <div id="area" style="padding: 5px;">
-                    <table id='tbArea' style="height: 800px;">
-                        <tr>
-                            <td><textarea autofocus id="md-area" onkeyup=mdSwitch()>
+      </div>
+    </div>
+    <div class="hRight">
+      <div class="titleLeft">&nbsp;&nbsp;小猿Markdown编辑器</div>
+      <div class="titleRight">
+        <span class="fa-stack" onclick="winControl('minimize')">
+          <i class="fa fa-square-o fa-stack-2x"></i>
+          <i class="fa fa-window-minimize fa-stack-1x"></i>
+        </span>
+        <span class="fa-stack" onclick="winControl('maximize')">
+          <i class="fa fa-square-o fa-stack-2x"></i>
+          <i class="fa fa-window-maximize fa-stack-1x"></i>
+        </span>
+        <span class="fa-stack" onclick="winControl('close')">
+          <i class="fa fa-square-o fa-stack-2x"></i>
+          <i class="fa fa-window-close fa-stack-1x"></i>
+        </span>
+      </div>
+      <div id="area" style="padding: 5px;">
+        <table id='tbArea' style="height: 800px;">
+          <tr>
+            <td><textarea autofocus id="md-area" onkeyup=mdSwitch()>
 # 将进酒
 > 君不见黄河之水天上来
 - 奔流到海不复回
@@ -163,15 +177,16 @@
 > 君不见高堂明镜悲白发
 - 朝如青丝暮成雪
                             </textarea></td>
-                            <td>
-                                <div id="show-area" class="clearfix"></div>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-       
-    </body>
-    <script src="./static/leftmenu/js/script.js"></script>
+            <td>
+              <div id="show-area" class="clearfix"></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</body>
+<script src="./static/leftmenu/js/script.js"></script>
+
 </html>
